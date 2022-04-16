@@ -5,7 +5,7 @@ import baseball.constants.ErrorMessage;
 
 import java.util.regex.Pattern;
 
-public class NextStepBalls extends Balls<Integer, Integer> {
+public class NextStepBalls extends Balls{
 
     @Override
     public boolean isValidValue(String value){
@@ -23,6 +23,7 @@ public class NextStepBalls extends Balls<Integer, Integer> {
 
     @Override
     public void parseBallMap(String ballStr){
+        ballMap.clear();
 
         char[] chars = ballStr.toCharArray();
         for (int i = 0; i < chars.length; i++){

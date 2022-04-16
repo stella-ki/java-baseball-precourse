@@ -2,20 +2,20 @@ package baseball.domain.ball;
 
 import java.util.*;
 
-public abstract class Balls<K, V> {
+public abstract class Balls {
 
     //value , index
-    Map<K, V> ballMap = new HashMap<>();
+    Map<Integer, Integer> ballMap = new HashMap<>();
 
-    public boolean isBallThere(K key){
-        return getBall(key) != null;
+    public boolean isBallThere(int key){
+        return ballMap.containsKey(key);
     }
 
-    public V getBall(K key) {
+    public int getBall(int key) {
         return ballMap.get(key);
     }
 
-    public Set<K> getValues(){
+    public Set<Integer> getValues(){
         return ballMap.keySet();
     }
 
