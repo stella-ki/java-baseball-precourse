@@ -13,6 +13,14 @@ public class GameResult {
         ballCount = 0;
     }
 
+    public int getBallCount(){
+        return ballCount;
+    }
+
+    public int getStrikeCount(){
+        return strikeCount;
+    }
+
     public void increaseBallCount(){
         ballCount++;
     }
