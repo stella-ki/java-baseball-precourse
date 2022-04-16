@@ -4,7 +4,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.*;
 
-public class NonDupOneDigitBallGenerator implements BallGenerator{
+public abstract class NonDupOneDigitBallGenerator implements BallGenerator{
 
     @Override
     public List<Integer> generateBalls(int min, int max, int length) {
