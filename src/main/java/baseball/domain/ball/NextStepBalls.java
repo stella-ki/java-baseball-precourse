@@ -22,7 +22,7 @@ public class NextStepBalls extends Balls{
     }
 
     @Override
-    public void parseBallMap(String ballStr){
+    protected void parseBallMap(String ballStr){
         ballMap.clear();
 
         char[] chars = ballStr.toCharArray();

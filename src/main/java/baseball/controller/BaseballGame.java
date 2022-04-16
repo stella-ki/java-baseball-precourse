@@ -42,7 +42,7 @@ public class BaseballGame {
         }
     }
 
-    public void score(Player player, int ball){
+    private void score(Player player, int ball){
         if(!computer.isBallThere(ball)){
             return;
         }

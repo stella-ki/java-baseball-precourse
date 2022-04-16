@@ -22,7 +22,7 @@ public class GameMachine {
         }
     }
 
-    public boolean game(){
+    private boolean game(){
         game.init();
         System.out.print(GameMessage.MSG_INPUT_BALLS_VALUE);
 
@@ -39,7 +39,7 @@ public class GameMachine {
         return false;
     }
 
-    public boolean gameClose(){
+    private boolean gameClose(){
 
         System.out.println(GameMessage.MSG_GAME_FINISHED);
         if(askUser()){
@@ -49,7 +49,7 @@ public class GameMachine {
         return true;
     }
 
-    public boolean askUser(){
+    private boolean askUser(){
         System.out.println(GameMessage.MSG_ASK_QUESTION_GAME_FINISH);
         String answer = Console.readLine();
 

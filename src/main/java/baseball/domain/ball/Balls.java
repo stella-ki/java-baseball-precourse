@@ -26,5 +26,5 @@ public abstract class Balls {
     }
 
     public abstract boolean isValidValue(String ballStr);
-    public abstract void parseBallMap(String ballStr);
+    protected abstract void parseBallMap(String ballStr);
 }

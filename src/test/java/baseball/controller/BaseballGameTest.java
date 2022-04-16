@@ -4,6 +4,7 @@ import baseball.constants.GameMessage;
 import baseball.domain.player.Player;
 import baseball.domain.player.User;
 import camp.nextstep.edu.missionutils.Randoms;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -141,7 +142,9 @@ class BaseballGameTest {
 
     @Test
     @DisplayName("game 단일 값의 스코어가 정상적으로 저장되는지 확인한다.")
+    @Disabled("테스트 완료 후 score method type을 private으로 변경")
     void score() {
+        /*
         Player player = new User();
         player.generateBalls("215");
 
@@ -160,7 +163,9 @@ class BaseballGameTest {
                 },
                 1,3,5
         );
+        */
     }
+
 
 
     private static <T> void assertRandomTest(
