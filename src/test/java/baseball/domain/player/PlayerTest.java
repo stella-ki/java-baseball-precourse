@@ -14,8 +14,8 @@ class PlayerTest {
     @DisplayName("computer 객체가 주어진 ball generator에 맞게 ball을 생성하고 가지고 있는지 확인한다.")
     void computerGenerateBalls() {
         BallGenerator ballGenerator = new NextStepBallGenerator();
-        Player player = new Computer(ballGenerator);
-        player.generateBalls(null);
+        Computer player = new Computer(ballGenerator);
+        player.generateBalls();
         assertTrue(player.balls instanceof NextStepBalls,"");
     }
 
@@ -24,7 +24,7 @@ class PlayerTest {
     @DisplayName("User 객체가 input으로 넣어준 ball을 가지고 있는지 확인한다.")
     void userSetBalls() {
         String ballStr = "542";
-        Player player = new User();
+        User player = new User();
         player.generateBalls(ballStr);
 
         assertTrue(player.balls.isBallThere(5), "Ball이 비정상적으로 parsing되어 5의 값이 포함되지 않았습니다.");
