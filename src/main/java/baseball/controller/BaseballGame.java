@@ -46,13 +46,11 @@ public class BaseballGame {
         if(!computer.isBallThere(ball)){
             return;
         }
-        if(computer.isBallThere(ball) &&
-                computer.getIndex(ball) != player.getIndex(ball)){
+        if(computer.getIndex(ball) != player.getIndex(ball)){
             gameResult.increaseBallCount();
             return;
         }
-        if(computer.isBallThere(ball) &&
-                computer.getIndex(ball) == player.getIndex(ball)){
+        if(computer.getIndex(ball) == player.getIndex(ball)){
             gameResult.increaseStrikeCount();
         }
     }
