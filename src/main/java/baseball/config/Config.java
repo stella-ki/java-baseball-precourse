@@ -6,4 +6,6 @@ public class Config {
     public static final int LENGTH_INPUT_VALUE = 3;
 
     public static final String PATTERN_NEXTCAMP = "^[1-9]{3}";
+
+    public static final int STRIKE_INT_VALUE = 3;
 }
