@@ -97,8 +97,8 @@ class BaseballGameTest {
                     baseballGame.start();
                     baseballGame.play(player);
 
-                    assertEquals(sb.append(baseballGame.gameResult.getStrikeCount()).append(ResultType.STRIKE.getValue()).toString(),
-                            baseballGame.gameResult.toString(),
+                    assertEquals(baseballGame.gameResult.toString(),
+                            sb.append(baseballGame.gameResult.getStrikeCount()).append(ResultType.STRIKE.getValue()).toString(),
                             "결과 값이 '1스트라이크'여야 합니다.");
 
                     sb.setLength(0);
@@ -108,9 +108,9 @@ class BaseballGameTest {
                     player.generateBalls("215");
                     baseballGame.play(player);
 
-                    assertEquals(sb.append(baseballGame.gameResult.getBallCount()).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
+                    assertEquals(baseballGame.gameResult.toString(),
+                            sb.append(baseballGame.gameResult.getBallCount()).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
                                     .append(baseballGame.gameResult.getStrikeCount()).append(ResultType.STRIKE.getValue()).toString(),
-                            baseballGame.gameResult.toString(),
                             "결과 값이 '1볼 1스트라이크'여야 합니다.");
                 },
                 1,3,5

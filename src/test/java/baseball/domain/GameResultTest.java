@@ -18,7 +18,9 @@ class GameResultTest {
         gameResult.increaseStrikeCount();
         gameResult.init();
 
-        assertEquals(gameResult.toString(), ResultType.NOTHING.getValue(), "ball count 값과 strike count 값이 0으로 초기화 되어야 합니다.");
+        assertEquals(ResultType.NOTHING.getValue(),
+                gameResult.toString(),
+                "ball count 값과 strike count 값이 0으로 초기화 되어야 합니다.");
     }
 
     @Test
@@ -29,17 +31,17 @@ class GameResultTest {
 
         gameResult.increaseBallCount();
 
-        assertEquals(gameResult.toString(),
-                sb.append(1).append(ResultType.BALL.getValue()).toString()
-                , "ball count 값이 1이여야 합니다.");
+        assertEquals(sb.append(1).append(ResultType.BALL.getValue()).toString(),
+                gameResult.toString(),
+                "ball count 값이 1이여야 합니다.");
 
         sb.setLength(0);
 
         gameResult.increaseBallCount();
 
-        assertEquals(gameResult.toString(),
-                sb.append(2).append(ResultType.BALL.getValue()).toString()
-                , "ball count 값이 2이여야 합니다.");
+        assertEquals(sb.append(2).append(ResultType.BALL.getValue()).toString(),
+                gameResult.toString(),
+                "ball count 값이 2이여야 합니다.");
     }
 
     @Test
@@ -50,17 +52,17 @@ class GameResultTest {
 
         gameResult.increaseStrikeCount();
 
-        assertEquals(gameResult.toString(),
-                sb.append(1).append(ResultType.STRIKE.getValue()).toString()
-                , "strike count 값이 1이여야 합니다.");
+        assertEquals(sb.append(1).append(ResultType.STRIKE.getValue()).toString() ,
+                gameResult.toString(),
+                "strike count 값이 1이여야 합니다.");
 
         sb.setLength(0);
 
         gameResult.increaseStrikeCount();
 
-        assertEquals(gameResult.toString(),
-                sb.append(2).append(ResultType.STRIKE.getValue()).toString()
-                , "strike count 값이 2이여야 합니다.");
+        assertEquals(sb.append(2).append(ResultType.STRIKE.getValue()).toString(),
+                gameResult.toString(),
+                "strike count 값이 2이여야 합니다.");
 
     }
 
@@ -73,20 +75,20 @@ class GameResultTest {
         gameResult.increaseStrikeCount();
         gameResult.increaseStrikeCount();
 
-        assertEquals(gameResult.toString(),
-                sb.append(1).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
-                        .append(2).append(ResultType.STRIKE.getValue()).toString()
-                , "ball count 값은 1, strike count 값은 2로 설정되어야 합니다.");
+        assertEquals(sb.append(1).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
+                        .append(2).append(ResultType.STRIKE.getValue()).toString(),
+                gameResult.toString(),
+                "ball count 값은 1, strike count 값은 2로 설정되어야 합니다.");
 
         sb.setLength(0);
 
         gameResult.increaseBallCount();
         gameResult.increaseStrikeCount();
 
-        assertEquals(gameResult.toString(),
-                sb.append(2).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
-                        .append(3).append(ResultType.STRIKE.getValue()).toString()
-                , "ball count 값은 2, strike count 값은 3로 설정되어야 합니다.");
+        assertEquals(sb.append(2).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
+                        .append(3).append(ResultType.STRIKE.getValue()).toString(),
+                gameResult.toString(),
+                "ball count 값은 2, strike count 값은 3로 설정되어야 합니다.");
     }
 
     @Test

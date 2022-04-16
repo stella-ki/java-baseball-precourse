@@ -39,9 +39,9 @@ class NextStepBallsTest {
         assertTrue(map.containsKey(4), "Ball이 비정상적으로 parsing되어 4의 값이 포함되지 않았습니다.");
         assertTrue(map.containsKey(5), "Ball이 비정상적으로 parsing되어 5의 값이 포함되지 않았습니다.");
 
-        assertEquals(map.get(6), 0, "Ball 6값의 index는 0이여야 합니다.");
-        assertEquals(map.get(4),1, "Ball 4값의 index는 1이여야 합니다.");
-        assertEquals(map.get(5),2, "Ball 5값의 index는 2이여야 합니다.");
+        assertEquals(0, map.get(6), "Ball 6값의 index는 0이여야 합니다.");
+        assertEquals(1, map.get(4),"Ball 4값의 index는 1이여야 합니다.");
+        assertEquals(2, map.get(5),"Ball 5값의 index는 2이여야 합니다.");
 
     }
 }
