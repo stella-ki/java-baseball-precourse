@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
 public class NextStepBalls extends Balls{
 
     @Override
-    public boolean isValidValue(String value){
+    public boolean isValidValue(String ballStr){
 
-        if(value.length() != 3){
+        if(ballStr.length() != 3){
             throw new IllegalArgumentException(ErrorMessage.ILLEGAL_FORMAT_PARAMETER_LENGTH);
         }
 
-        if(!Pattern.matches(Config.PATTERN_NEXTCAMP, value)){
+        if(!Pattern.matches(Config.PATTERN_NEXTCAMP, ballStr)){
             throw new IllegalArgumentException(ErrorMessage.ILLEGAL_FORMAT_PARAMETER_RANGE);
         }
 

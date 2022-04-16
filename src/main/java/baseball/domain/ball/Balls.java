@@ -4,18 +4,18 @@ import java.util.*;
 
 public abstract class Balls {
 
-    //value , index
+    //ball , index
     Map<Integer, Integer> ballMap = new HashMap<>();
 
-    public boolean isBallThere(int key){
-        return ballMap.containsKey(key);
+    public boolean isBallThere(int ball){
+        return ballMap.containsKey(ball);
     }
 
-    public int getBall(int key) {
-        return ballMap.get(key);
+    public int getIndex(int ball) {
+        return ballMap.get(ball);
     }
 
-    public Set<Integer> getValues(){
+    public Set<Integer> getBalls(){
         return ballMap.keySet();
     }
 

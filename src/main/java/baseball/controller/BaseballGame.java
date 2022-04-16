@@ -1,7 +1,5 @@
 package baseball.controller;
 
-import baseball.constants.GameMessage;
-import baseball.constants.ResultType;
 import baseball.domain.player.Computer;
 import baseball.domain.player.Player;
 import baseball.generator.NextStepBallGenerator;
@@ -38,26 +36,23 @@ public class BaseballGame {
     }
 
     public void play(Player player){
-        List<Integer> keys = new ArrayList<>(player.getBalls());
-        for (int key : keys){
-            score(player, key);
+        List<Integer> balls = new ArrayList<>(player.getBalls());
+        for (int ball : balls){
+            score(player, ball);
         }
     }
 
-    public void score(Player player, int key){
-        if(!computer.isBallThere(key)){
-            //nothing
+    public void score(Player player, int ball){
+        if(!computer.isBallThere(ball)){
             return;
         }
-        if(computer.isBallThere(key) &&
-                computer.getBall(key) != player.getBall(key)){
-            //ball
+        if(computer.isBallThere(ball) &&
+                computer.getIndex(ball) != player.getIndex(ball)){
             gameResult.increaseBallCount();
             return;
         }
-        if(computer.isBallThere(key) &&
-                computer.getBall(key) == player.getBall(key)){
-            //strike
+        if(computer.isBallThere(ball) &&
+                computer.getIndex(ball) == player.getIndex(ball)){
             gameResult.increaseStrikeCount();
         }
     }

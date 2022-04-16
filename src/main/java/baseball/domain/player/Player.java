@@ -13,11 +13,11 @@ public abstract class Player {
     public abstract void generateBalls(String ballStr);
 
     public Set<Integer> getBalls(){
-        return balls.getValues();
+        return balls.getBalls();
     }
 
-    public int getBall(int key){
-        return balls.getBall(key);
+    public int getIndex(int key){
+        return balls.getIndex(key);
     }
 
     public boolean isBallThere(int key){

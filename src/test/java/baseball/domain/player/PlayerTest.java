@@ -31,8 +31,8 @@ class PlayerTest {
         assertTrue(player.balls.isBallThere(4), "Ball이 비정상적으로 parsing되어 4의 값이 포함되지 않았습니다.");
         assertTrue(player.balls.isBallThere(2), "Ball이 비정상적으로 parsing되어 2의 값이 포함되지 않았습니다.");
 
-        assertEquals(player.balls.getBall(5), 0, "Ball 5값의 index는 0이여야 합니다.");
-        assertEquals(player.balls.getBall(4),1, "Ball 4값의 index는 1이여야 합니다.");
-        assertEquals(player.balls.getBall(2),2, "Ball 2값의 index는 2이여야 합니다.");
+        assertEquals(player.balls.getIndex(5), 0, "Ball 5값의 index는 0이여야 합니다.");
+        assertEquals(player.balls.getIndex(4),1, "Ball 4값의 index는 1이여야 합니다.");
+        assertEquals(player.balls.getIndex(2),2, "Ball 2값의 index는 2이여야 합니다.");
     }
 }
