@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BaseballGame {
 
-    Player computer;
+    Computer computer;
     GameResult gameResult;
 
     public BaseballGame(){
@@ -19,7 +19,7 @@ public class BaseballGame {
     }
 
     public void start(){
-        computer.generateBalls(null);
+        computer.generateBalls();
     }
 
     public void init(){

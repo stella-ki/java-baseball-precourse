@@ -12,7 +12,7 @@ public class Computer extends Player{
         this.ballGenerator = ballGenerator;
     }
 
-    public void generateBalls(String ballStr){
+    public void generateBalls(){
         balls.setBallMap(
                 Util.integerListToString(
                         ballGenerator.generateBalls()

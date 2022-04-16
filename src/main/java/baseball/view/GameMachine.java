@@ -10,7 +10,7 @@ import camp.nextstep.edu.missionutils.Console;
 public class GameMachine {
 
     BaseballGame game = new BaseballGame();
-    Player user = new User();
+    User user = new User();
 
     public void run(){
         boolean isGameFinished = false;

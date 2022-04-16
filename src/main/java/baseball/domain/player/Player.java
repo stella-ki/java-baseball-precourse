@@ -10,8 +10,6 @@ public abstract class Player {
 
     Balls balls = new NextStepBalls();
 
-    public abstract void generateBalls(String ballStr);
-
     public Set<Integer> getBalls(){
         return balls.getBalls();
     }
