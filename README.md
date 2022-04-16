@@ -18,52 +18,45 @@
 6. User에게 재시작 여부 입력 받음
  
 ## 구현 목록
-* Util
-    - generateRandomNumberString(int, int)
-        - 1번째 input 값으로 들어온 int가 최대인 숫자를 2번째 input 값으로 들어온 숫자의 개수 만큼 생성하여 array 반환한다.
-    - convertArraytoMap(arrary)
-        - input 값으로 들어온 array를 map(array value, index) 형태로 바꿔 반환한다.
-        
-* GameValue
-    - 게임의 값을 map의 형태로 보유하고 있다.
-    - isValidValue(String)
-        - input으로 들어온 String값이 3자리 수의 숫자 인지 확인한다.
-        - 만약 아니라면 IllegalArgumentException을 반환한다.
+* Ball generator
+    - ball 생성 로직
+    - ball 생성의 format이 다양해 질 수 있으므로 interface로 구현
+    - 필요한 상수 config로 추가
+    
+* Balls
+    - ball 검증의 format이 다양해 질 수 있으므로 interface로 구현
+    - ball 검증 
+        - ball 값을 검증하고, 비정상이라면 IllegalArgumentException을 반환
+    - ball 값 저장
+    - 필요한 메시지를 message 상수로 추가
+
+* Player
+    - Balls 보유
+    - computer나 user 역할
+    - computer 역할
+        - 서로 다른 3자리 생성
+    - user 역할
+        - Balls 값 받고 저장
+
+* GameResult
+    - strike 갯수, ball 갯수 저장
+    - 각 갯수에 따라 포맷에 맞는 문구 생성
+    - game 성공 여부값 반환 가능
+    - 필요한 메시지를 message 상수로 추가
     
 * BaseballGame 
-    - 컴퓨터 Player 객체 보유
-    - GameResult 객체 보유
-    - BaseballGame()
-        - 컴퓨터 Player 객체를 생성 한다.
-    - start() 
-        - 게임의 시작을 뜻한다.  
-        - 컴퓨터 Player 객체의 GameValue 객체 생성 및 값을 생성한다.
-    - play(map) 
-        - input으로 들어온 유저 값과 computer 값을 비교하여 결과를 반환 한다.
-    - restart(boolean)
-        - input으로 들어온 boolean 값을 이용하여 게임 재시작 여부를 결정 한다.
-        
-* GameResult
-    - int 형태의 strikeCount, ballCount를 변수 보유
-    - setStringCount(int)
-        - strikeCount값을 설정한다.
-    - setBallCount(int)
-        - ballCount값을 설정한다.
-    - getStrikeCount()
-        - strikeCount를 반환한다.
-    - getBallCount()
-        - ballCount를 반환한다.
-    - toString()
-        - strike와 ball count를 이용하여 메시지를 출력할 수 있도록 String을 반환한다.
-    - isFinished()
-        - 3 스트라이크 인 경우 true를 반환한다.
-        
-* Player
-    - GameValue 객제 보유
-    - generateComputer()
-        - player가 computer인 경우 3자리 서로 다른 수를 생성하여 GameValue를 초기화 한다.
-    - inputValue(String)
-        - player가 User인 경우 3자리 수를 입력 받아 GameValue를 초기화 한다.
-    
+    - 게임 결과 저장
+    - 게임 시작 
+        - computer player의 ball 생성 
+    - 게임 초기화 
+        - 게임 결과 값을 초기화
+    - 게임
+        - computer player와 user player의 값을 비교하여 결과 저장
 
-    
+* BaseballGameMachine
+    - 화면 출력단           
+    - 게임 시작 명령
+    - 게임 성공 시 후처리 작업
+    - user에게 게임 재시작 여부 확인
+    - 필요한 메시지를 message 상수로 추가
+ 
