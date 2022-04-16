@@ -1,9 +1,12 @@
 package baseball.domain.player;
 
 import baseball.domain.ball.*;
+import baseball.generator.BallGenerator;
+
 import java.util.Set;
 
 public abstract class Player {
+    BallGenerator ballGenerator;
 
     Balls balls = new NextStepBalls();
 
