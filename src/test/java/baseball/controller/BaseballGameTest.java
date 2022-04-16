@@ -33,7 +33,9 @@ class BaseballGameTest {
         assertEquals(3, balls.size(), "Computer 값의 길이가 3이여야 합니다.");
 
         ArrayList<Integer> ballsArray = new ArrayList<>();
-        balls.forEach(b -> ballsArray.add(baseballGame.computer.getIndex(b), b));
+        for(int ball : balls){
+            ballsArray.add(baseballGame.computer.getIndex(ball), ball);
+        }
 
         assertEquals(3, balls.size(), "Computer 값이 중복 없는 값으로 생성되어야 합니다.");
     }

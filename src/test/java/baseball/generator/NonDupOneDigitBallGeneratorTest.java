@@ -34,8 +34,9 @@ class NonDupOneDigitBallGeneratorTest {
 
         List<Integer> balls = ballGenerator.generateBalls(minValue, maxValue, length);
 
-        balls.forEach(ball -> assertFalse((ball > maxValue || ball < minValue), "생성된 ball의 값이 input값의 범위에 해당되지 않습니다."));
-
+        for (int ball : balls){
+            assertFalse((ball > maxValue || ball < minValue), "생성된 ball의 값이 input값의 범위에 해당되지 않습니다.");
+        }
     }
 
     @Test

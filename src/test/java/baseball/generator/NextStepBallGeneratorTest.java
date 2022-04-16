@@ -29,8 +29,9 @@ class NextStepBallGeneratorTest {
 
         List<Integer> balls = ballGenerator.generateBalls();
 
-        balls.forEach(ball -> assertFalse((ball > 9 || ball < 1), "생성된 ball의 값이 1~9의 범위가 아닙니다."));
-
+        for (int ball : balls){
+            assertFalse((ball > 9 || ball < 1), "생성된 ball의 값이 1~9의 범위가 아닙니다.");
+        }
     }
 
     @Test
