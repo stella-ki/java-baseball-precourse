@@ -31,19 +31,16 @@ public class GameResult {
 
     @Override
     public String toString(){
-        StringBuilder sb = new StringBuilder();
         if(strikeCount == 0 && ballCount == 0){
             return ResultType.NOTHING.getValue();
         }
         if(strikeCount == 0){
-            return sb.append(ballCount).append(ResultType.BALL.getValue()).toString();
+            return String.format("%d" + ResultType.BALL.getValue(), ballCount);
         }
         if(ballCount == 0){
-            return sb.append(strikeCount).append(ResultType.STRIKE.getValue()).toString();
+            return String.format("%d" + ResultType.STRIKE.getValue(), strikeCount);
         }
-
-        return sb.append(ballCount).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
-                .append(strikeCount).append(ResultType.STRIKE.getValue()).toString();
+        return String.format("%d" + ResultType.BALL.getValue() + " %d" + ResultType.STRIKE.getValue(), ballCount, strikeCount);
     }
 
     public boolean isFinished(){

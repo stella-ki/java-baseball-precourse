@@ -86,7 +86,6 @@ class BaseballGameTest {
     @Test
     @DisplayName("game score가 정상적으로 출력되는지 확인한다.")
     void printGameScore() {
-        StringBuffer sb = new StringBuffer();
         Player player = new User();
         player.generateBalls("245");
 
@@ -98,10 +97,8 @@ class BaseballGameTest {
                     baseballGame.play(player);
 
                     assertEquals(baseballGame.gameResult.toString(),
-                            sb.append(baseballGame.gameResult.getStrikeCount()).append(ResultType.STRIKE.getValue()).toString(),
+                            String.format("%d" + ResultType.STRIKE.getValue(), baseballGame.gameResult.getStrikeCount()),
                             "결과 값이 '1스트라이크'여야 합니다.");
-
-                    sb.setLength(0);
 
                     baseballGame.init();
 
@@ -109,8 +106,7 @@ class BaseballGameTest {
                     baseballGame.play(player);
 
                     assertEquals(baseballGame.gameResult.toString(),
-                            sb.append(baseballGame.gameResult.getBallCount()).append(ResultType.BALL.getValue()).append(GameMessage.SPACE)
-                                    .append(baseballGame.gameResult.getStrikeCount()).append(ResultType.STRIKE.getValue()).toString(),
+                            String.format("%d" + ResultType.BALL.getValue() + " %d" + ResultType.STRIKE.getValue() , baseballGame.gameResult.getBallCount(), baseballGame.gameResult.getStrikeCount()),
                             "결과 값이 '1볼 1스트라이크'여야 합니다.");
                 },
                 1,3,5
