@@ -9,6 +9,8 @@ public class GameMessage {
     public static final String MSG_ASK_ANSWER_YES = "1";
     public static final String MSG_ASK_ANSWER_NO = "2";
 
-    public static final String SPACE = " ";
+    public static final String SCORE_STRIKE = "스트라이크";
+    public static final String SCORE_BALL = "볼";
+    public static final String SCORE_NOTHING = "낫싱";
 
 }

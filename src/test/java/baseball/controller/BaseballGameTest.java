@@ -1,12 +1,8 @@
 package baseball.controller;
 
-import baseball.Util.Util;
 import baseball.constants.GameMessage;
-import baseball.constants.ResultType;
 import baseball.domain.player.Player;
 import baseball.domain.player.User;
-import baseball.generator.BallGenerator;
-import baseball.generator.NextStepBallGenerator;
 import camp.nextstep.edu.missionutils.Randoms;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -97,7 +93,7 @@ class BaseballGameTest {
                     baseballGame.play(player);
 
                     assertEquals(baseballGame.gameResult.toString(),
-                            String.format("%d" + ResultType.STRIKE.getValue(), baseballGame.gameResult.getStrikeCount()),
+                            String.format("%d" + GameMessage.SCORE_STRIKE, baseballGame.gameResult.getStrikeCount()),
                             "결과 값이 '1스트라이크'여야 합니다.");
 
                     baseballGame.init();
@@ -106,7 +102,7 @@ class BaseballGameTest {
                     baseballGame.play(player);
 
                     assertEquals(baseballGame.gameResult.toString(),
-                            String.format("%d" + ResultType.BALL.getValue() + " %d" + ResultType.STRIKE.getValue() , baseballGame.gameResult.getBallCount(), baseballGame.gameResult.getStrikeCount()),
+                            String.format("%d" + GameMessage.SCORE_BALL + " %d" + GameMessage.SCORE_STRIKE , baseballGame.gameResult.getBallCount(), baseballGame.gameResult.getStrikeCount()),
                             "결과 값이 '1볼 1스트라이크'여야 합니다.");
                 },
                 1,3,5

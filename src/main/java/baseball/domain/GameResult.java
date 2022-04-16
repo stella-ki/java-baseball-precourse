@@ -2,7 +2,6 @@ package baseball.domain;
 
 import baseball.config.Config;
 import baseball.constants.GameMessage;
-import baseball.constants.ResultType;
 
 public class GameResult {
     private int strikeCount = 0;
@@ -32,15 +31,15 @@ public class GameResult {
     @Override
     public String toString(){
         if(strikeCount == 0 && ballCount == 0){
-            return ResultType.NOTHING.getValue();
+            return GameMessage.SCORE_NOTHING;
         }
         if(strikeCount == 0){
-            return String.format("%d" + ResultType.BALL.getValue(), ballCount);
+            return String.format("%d" + GameMessage.SCORE_BALL, ballCount);
         }
         if(ballCount == 0){
-            return String.format("%d" + ResultType.STRIKE.getValue(), strikeCount);
+            return String.format("%d" + GameMessage.SCORE_STRIKE, strikeCount);
         }
-        return String.format("%d" + ResultType.BALL.getValue() + " %d" + ResultType.STRIKE.getValue(), ballCount, strikeCount);
+        return String.format("%d" + GameMessage.SCORE_BALL + " %d" + GameMessage.SCORE_STRIKE, ballCount, strikeCount);
     }
 
     public boolean isFinished(){

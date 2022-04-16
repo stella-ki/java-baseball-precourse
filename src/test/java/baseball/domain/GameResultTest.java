@@ -1,7 +1,6 @@
 package baseball.domain;
 
 import baseball.constants.GameMessage;
-import baseball.constants.ResultType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +17,7 @@ class GameResultTest {
         gameResult.increaseStrikeCount();
         gameResult.init();
 
-        assertEquals(ResultType.NOTHING.getValue(),
+        assertEquals(GameMessage.SCORE_NOTHING,
                 gameResult.toString(),
                 "ball count 값과 strike count 값이 0으로 초기화 되어야 합니다.");
     }
@@ -30,13 +29,13 @@ class GameResultTest {
 
         gameResult.increaseBallCount();
 
-        assertEquals(String.format("%d" + ResultType.BALL.getValue(), 1),
+        assertEquals(String.format("%d" + GameMessage.SCORE_BALL, 1),
                 gameResult.toString(),
                 "ball count 값이 1이여야 합니다.");
 
         gameResult.increaseBallCount();
 
-        assertEquals(String.format("%d" + ResultType.BALL.getValue(), 2),
+        assertEquals(String.format("%d" + GameMessage.SCORE_BALL, 2),
                 gameResult.toString(),
                 "ball count 값이 2이여야 합니다.");
     }
@@ -48,13 +47,13 @@ class GameResultTest {
 
         gameResult.increaseStrikeCount();
 
-        assertEquals(String.format("%d" + ResultType.STRIKE.getValue(), 1),
+        assertEquals(String.format("%d" + GameMessage.SCORE_STRIKE, 1),
                 gameResult.toString(),
                 "strike count 값이 1이여야 합니다.");
 
         gameResult.increaseStrikeCount();
 
-        assertEquals(String.format("%d" + ResultType.STRIKE.getValue(), 2),
+        assertEquals(String.format("%d" + GameMessage.SCORE_STRIKE, 2),
                 gameResult.toString(),
                 "strike count 값이 2이여야 합니다.");
     }
@@ -67,14 +66,14 @@ class GameResultTest {
         gameResult.increaseStrikeCount();
         gameResult.increaseStrikeCount();
 
-        assertEquals(String.format("%d" + ResultType.BALL.getValue() + " %d" + ResultType.STRIKE.getValue(), 1, 2),
+        assertEquals(String.format("%d" + GameMessage.SCORE_BALL + " %d" + GameMessage.SCORE_STRIKE, 1, 2),
                 gameResult.toString(),
                 "ball count 값은 1, strike count 값은 2로 설정되어야 합니다.");
 
         gameResult.increaseBallCount();
         gameResult.increaseStrikeCount();
 
-        assertEquals(String.format("%d" + ResultType.BALL.getValue() + " %d" + ResultType.STRIKE.getValue(), 2, 3),
+        assertEquals(String.format("%d" + GameMessage.SCORE_BALL + " %d" + GameMessage.SCORE_STRIKE, 2, 3),
                 gameResult.toString(),
                 "ball count 값은 2, strike count 값은 3로 설정되어야 합니다.");
     }
