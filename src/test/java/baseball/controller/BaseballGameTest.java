@@ -43,7 +43,7 @@ class BaseballGameTest {
     @Test
     @DisplayName("게임 재시작을 위해 game result 값이 초기화 되는지 확인한다.")
     void init() {
-        Player player = new User();
+        User player = new User();
         player.generateBalls("135");
 
         assertRandomTest(
@@ -65,7 +65,7 @@ class BaseballGameTest {
     @Test
     @DisplayName("게임 종료 여부를 정상적으로 반환하는지 확인한다.")
     void isFinished() {
-        Player player = new User();
+        User player = new User();
         player.generateBalls("135");
 
         assertRandomTest(
@@ -84,7 +84,7 @@ class BaseballGameTest {
     @Test
     @DisplayName("game score가 정상적으로 출력되는지 확인한다.")
     void printGameScore() {
-        Player player = new User();
+        User player = new User();
         player.generateBalls("245");
 
         assertRandomTest(
@@ -114,7 +114,7 @@ class BaseballGameTest {
     @Test
     @DisplayName("game score의 결과가 정상적으로 저장되는지 확인한다.")
     void play() {
-        Player player = new User();
+        User player = new User();
         player.generateBalls("245");
 
         assertRandomTest(
@@ -137,6 +137,7 @@ class BaseballGameTest {
                 1,3,5
         );
     }
+
 
     @Test
     @DisplayName("game 단일 값의 스코어가 정상적으로 저장되는지 확인한다.")
