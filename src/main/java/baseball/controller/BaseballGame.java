@@ -1,10 +1,8 @@
 package baseball.controller;
 
-import baseball.domain.player.Computer;
-import baseball.domain.player.Player;
-import baseball.generator.NextStepBallGenerator;
+import baseball.domain.player.*;
 import baseball.domain.GameResult;
-
+import baseball.generator.NextStepBallGenerator;
 import java.util.ArrayList;
 import java.util.List;
 

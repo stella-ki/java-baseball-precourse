@@ -1,8 +1,7 @@
 package baseball.domain.player;
 
 import baseball.domain.ball.NextStepBalls;
-import baseball.generator.BallGenerator;
-import baseball.generator.NextStepBallGenerator;
+import baseball.generator.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

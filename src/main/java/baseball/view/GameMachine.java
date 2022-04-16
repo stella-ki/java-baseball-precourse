@@ -1,9 +1,7 @@
 package baseball.view;
 
-import baseball.constants.ErrorMessage;
-import baseball.constants.GameMessage;
+import baseball.constants.*;
 import baseball.controller.BaseballGame;
-import baseball.domain.player.Player;
 import baseball.domain.player.User;
 import camp.nextstep.edu.missionutils.Console;
 

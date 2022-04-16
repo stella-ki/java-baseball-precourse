@@ -2,7 +2,6 @@ package baseball.generator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.HashSet;
 import java.util.List;

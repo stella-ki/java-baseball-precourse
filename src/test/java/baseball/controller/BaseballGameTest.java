@@ -1,7 +1,6 @@
 package baseball.controller;
 
 import baseball.constants.GameMessage;
-import baseball.domain.player.Player;
 import baseball.domain.player.User;
 import camp.nextstep.edu.missionutils.Randoms;
 import org.junit.jupiter.api.Disabled;
@@ -9,13 +8,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 import org.mockito.MockedStatic;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
-
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mockStatic;
